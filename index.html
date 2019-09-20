@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Axios Medium 3</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section class="section">
+  <div id="app">
+    <ul>
+      <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
+        <li v-for="post in posts" style="margin-bottom: 2rem;" data-aos="slide-up" data-aos-offset="100" data-aos-easing="ease-out-back">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                {{post.title}}
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p>{{post.body}}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'></script>
+<script src='https://unpkg.com/aos@next/dist/aos.js'></script>
+<script src='https://unpkg.com/vue-infinite-scroll@2.0.2/vue-infinite-scroll.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>
